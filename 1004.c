@@ -6,6 +6,7 @@ typedef struct coord{
     int y;
 }COORD;
 
+
 typedef struct circle{
     int x;
     int y;
