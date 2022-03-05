@@ -1,8 +1,9 @@
 # Ignore all
 *
-/.vscode
 # Unignore all with extensions
 !*.*
 
 # Unignore all dirs
 !*/
+
+*/.vscode
