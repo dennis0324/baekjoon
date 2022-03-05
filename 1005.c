@@ -13,9 +13,6 @@ void push(lineData * data,int next){
     (*data).count++;
     (*data).arr[(*data).count - 1] = next;
 }
-void pop(lineData arr){
-
-}
 
 void freeArr(lineData * arr,int count){
     if(count == 0){
