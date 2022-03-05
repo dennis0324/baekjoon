@@ -24,6 +24,7 @@ int getCircle(COORD cord,CIRCLE cir){
 int main(){
     COORD start, end;
     CIRCLE cir;
+    int testing;
     int repeatCount,getCount;
     int i , j;
     int startResult, endResult;
