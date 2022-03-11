@@ -81,10 +81,6 @@ int main(){
         printf("%d\n",graph[resultIndex - 1].totalTime);
         
     }
-    // free(result.arr);
-    // for( int i = 0; i < buildCount; i++){
-    //     free(graph[i].arr);
-    // }
     return 0;
 }
 
