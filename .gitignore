@@ -6,4 +6,6 @@
 # Unignore all dirs
 !*/
 
+*.o
+*.out
 .vscode/
