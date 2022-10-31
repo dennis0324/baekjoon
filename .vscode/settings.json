@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "stack_array.h": "c",
+        "datastructurearray.h": "c",
+        "queue_array.h": "c",
+        "treenode.h": "c",
+        "main.h": "c",
+        "stdlib.h": "c",
+        "string.h": "c",
+        "ctype.h": "c",
+        "stdio.h": "c"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "My Custom Template",
+    "omitParentDirectory": true,
+    "openFilesWhenDone": [
+        "[FTName]/src/main.c"
+    ]
+  }
