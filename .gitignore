@@ -6,6 +6,7 @@
 # Unignore all dirs
 !*/
 
+temp/
 !Makefile
 !./.fttemplates/1/[FTName]/include/*
 !./.fttemplates/1/[FTName]/src/*

@@ -43,16 +43,33 @@ int queue_enque(QueueType * queue,QUEUEELEMENT data){
     if(queue_is_full(queue)){
         return 0;
     }
-    queue->data[queue->rear] = data;
     queue->rear = (queue->rear+1)%queue->total;
+    queue->data[queue->rear] = data;
     return 1;
 }
 
 int queue_deque(QueueType * queue,QUEUEELEMENT * resultValue){
     if(queue_is_empty(queue)) return 0;
+    queue->front = (queue->front+1)%queue->total;
     if(resultValue != NULL)
         *resultValue = queue->data[queue->front];
-    queue->front = (queue->front+1)%queue->total;
+    return 1;
+}
+
+int queue_enque_front(QueueType * queue,QUEUEELEMENT data){
+    if(queue_is_full(queue_is_full)){
+        return 0;
+    }
+    queue->data[queue->front] = data;
+    queue->front = (queue->front - 1 + queue->total) % queue->total;
+    return 1;
+}
+
+int queue_deque_back(QueueType * queue,QUEUEELEMENT * resultValue){
+    if(resultValue != NULL)
+        *resultValue = queue->data[queue->rear];
+    if(queue_is_empty(queue)) return 0;
+    queue->rear = (queue->rear - 1 + queue->total) % queue->total;
     return 1;
 }
 
@@ -60,19 +77,31 @@ int queue_deque(QueueType * queue,QUEUEELEMENT * resultValue){
 int main(){
     int command;
     scanf("%d",&command);
-    char input[10];
-    QueueType * q = create_queue(command + 1);
+    char input[20];
+    QueueType * q = create_queue(command + 2);
     
     while(command--){
         scanf("%s",input);
-        if(!strcmp(input,"push")){
+        if(!strcmp(input,"push_front")){
+            int temp;
+            scanf("%d",&temp);
+            queue_enque_front(q,temp);
+        }
+        if(!strcmp(input,"push_back")){
             int temp;
             scanf("%d",&temp);
             queue_enque(q,temp);
         }
-        else if(!strcmp(input,"pop")){
+        else if(!strcmp(input,"pop_front")){
             int temp;
             if(!queue_deque(q,&temp)){
+                temp = -1;
+            }
+            printf("%d\n",temp);
+        }
+        else if(!strcmp(input,"pop_back")){
+            int temp;
+            if(!queue_deque_back(q,&temp)){
                 temp = -1;
             }
             printf("%d\n",temp);
@@ -85,11 +114,11 @@ int main(){
         }
         else if(!strcmp(input,"front")){
             if(queue_is_empty(q)) printf("-1\n");
-            else printf("%d\n",q->data[q->front]);
+            else printf("%d\n",q->data[(q->front + 1) % q->total]);
         }
         else if(!strcmp(input,"back")){
             if(queue_is_empty(q)) printf("-1\n");
-            else printf("%d\n",q->data[q->rear - 1]);
+            else printf("%d\n",q->data[q->rear]);
         }
     }
 
