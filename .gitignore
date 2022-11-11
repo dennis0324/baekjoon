@@ -6,6 +6,8 @@
 # Unignore all dirs
 !*/
 
+!makeFile
+
 *.o
 *.out
 .vscode/
