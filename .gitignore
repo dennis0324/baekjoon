@@ -6,11 +6,15 @@
 # Unignore all dirs
 !*/
 
-!makeFile
+temp/
+!Makefile
+!./.fttemplates/1/[FTName]/include/*
+!./.fttemplates/1/[FTName]/src/*
+
 
 *.o
 *.out
-.vscode/
+# .vscode/
 
 *.out
 *.o

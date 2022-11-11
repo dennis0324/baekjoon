@@ -1,10 +1,7 @@
 {
     "name": "My Custom Template",
     "omitParentDirectory": true,
-    "structure": [
-      {
-        "fileName": "MakeFile",
-        "template": "MakeFile"
-      }
+    "openFilesWhenDone": [
+        "[FTName]/src/main.c"
     ]
   }
