@@ -23,6 +23,7 @@ int main() {
 		scanf("%d %d", &start, &end);
 		n = 0;
 		memset(visited, 0, sizeof(visited));
+        //bfs
 		enq(start, -1, 0);
 		for (int i = 0; !visited[end]; ++i) {
 			enq((q[i] * 2) % 10000, q[i], 1);
@@ -30,6 +31,7 @@ int main() {
 			enq(q[i]/1000+(q[i] % 1000)*10, q[i], 3);
 			enq(q[i]/10+(q[i]%10)*1000, q[i], 4);
 		}
+        //bfs
 		dfs(end);
 		putchar('\n');
 	}
